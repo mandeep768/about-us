@@ -1,38 +1,111 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+
+body{
+  margin: 0;
+  padding:0;
+font-family: 'poppins', sans-serif;
+}
+.banner{
+
+  width: 100%;
+  height: 100vh;
+  overflow:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.banner video{
+
+  position: absolute;
+  top:0;
+  left: 0;
+  object-fit: cover;
+  width:100%;
+  height:100%;
+
+pointer-events: none;
+}
+.banner .content{
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
 }
+ .banner .content h1{
+margin: 0;
+padding: 0;
+font-size: 4.5em;
+text-transform: uppercase;
+color: white;
+ }
+ .banner .content p{
+   font-size: 1.5em;
+   color:lightskyblue;
+ }
+ .thumb {
+  width:150px;
+  height:150px;
+  background-position:center center;
+  overflow:hidden;
+  border:1px solid black;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  background-image: attr(data-image-src);/*This is the question piece*/
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ /* teams */
+ body {
+  margin: 0;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: cornsilk;
+}
+.teams{
+  align-content: center;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul li {
+  box-sizing: border-box;
+  width: 15em;
+  height: 3em;
+  font-size: 20px;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  box-shadow: 0 0 1em rgba(0,0,0,0.2);
   color: white;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  line-height: 3em;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+ul li:nth-child(odd) {
+  background: linear-gradient(to right, orange, tomato);
+  text-align: left;
+  padding-left: 10%;
+  transform: perspective(500px) rotateY(45deg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul li:nth-child(even) {
+  background: linear-gradient(to left, orange, tomato);
+  text-align: right;
+  padding-right: 10%;
+  transform: perspective(500px) rotateY(-45deg);
+}
+
+ul li:nth-child(odd):hover {
+  transform: perspective(200px) rotateY(45deg);
+  padding-left: 5%;
+}
+
+ul li:nth-child(even):hover {
+  transform: perspective(200px) rotateY(-45deg);
+  padding-right: 5%;
 }
